@@ -18,7 +18,7 @@ public class FollowAlong : MonoBehaviour
 
        
 
-        GetComponent<Rigidbody>().velocity = 0.95f *
-                GetComponent<Rigidbody>().velocity + 0.05f * (followed.transform.position - transform.position);
+        GetComponent<Rigidbody>().linearVelocity = 0.95f *
+                GetComponent<Rigidbody>().linearVelocity + 0.05f * (followed.transform.position - transform.position);
     }
 }

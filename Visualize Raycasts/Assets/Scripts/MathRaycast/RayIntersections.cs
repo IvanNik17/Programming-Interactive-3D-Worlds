@@ -20,6 +20,8 @@ public class RayIntersections : MonoBehaviour
     Vector3 planePoint;
 
     Vector3 planeNormal;
+
+    public bool isSphere = true;
     void Start()
     {
         rayStart = transform.position;
@@ -34,7 +36,19 @@ public class RayIntersections : MonoBehaviour
     void Update()
     {
         float t1, t2;
-        bool isIntersect = RayIntersectsSphereDirect(rayStart, rayDirection, sphereCenter, radius, out t1, out t2);
+        bool isIntersect = false;
+
+        if (isSphere)
+        {
+            isIntersect = RayIntersectsSphereDirect(rayStart, rayDirection, sphereCenter, radius, out t1, out t2);
+        }
+        else 
+        {
+            isIntersect = RayIntersectsPlane(rayStart, rayDirection, rayLength, planePoint, plane.transform.up, out t1);
+
+        }
+        
+        Debug.Log(isIntersect);
 
         if (isIntersect)
         {
@@ -121,7 +135,7 @@ public class RayIntersections : MonoBehaviour
         }
     }
 
-    public static bool RayIntersectsPlane(Vector3 rayOrigin, Vector3 rayDirection, Vector3 planePoint, Vector3 planeNormal, out float t)
+    public static bool RayIntersectsPlane(Vector3 rayOrigin, Vector3 rayDirection, float rayLength, Vector3 planePoint, Vector3 planeNormal, out float t)
     {
         // Calculate the dot product of the ray direction and the plane normal
         float denominator = Vector3.Dot(planeNormal, rayDirection);
@@ -143,7 +157,7 @@ public class RayIntersections : MonoBehaviour
         
 
         // Check if the intersection is in the forward direction of the ray
-        return t >= 0;
+        return t >= 0 && t <= rayLength;
     }
 
 }

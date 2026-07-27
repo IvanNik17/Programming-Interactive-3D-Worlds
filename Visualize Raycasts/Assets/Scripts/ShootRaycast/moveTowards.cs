@@ -19,7 +19,7 @@ public class moveTowards : MonoBehaviour
     void FixedUpdate()
     {
         transform.LookAt(player.transform);
-        currRb.velocity = new Vector3(transform.forward.x * speed * Time.deltaTime, currRb.velocity.y, transform.forward.z * speed * Time.deltaTime);
+        currRb.linearVelocity = new Vector3(transform.forward.x * speed * Time.deltaTime, currRb.linearVelocity.y, transform.forward.z * speed * Time.deltaTime);
             
     }
 }

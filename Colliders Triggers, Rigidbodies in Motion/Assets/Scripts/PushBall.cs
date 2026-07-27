@@ -19,12 +19,12 @@ public class PushBall : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //pushObj.transform.Translate(new Vector3(-4f, 0, 0));
-            pushObj.transform.GetComponent<Rigidbody>().velocity = -pushObj.transform.right * speed;
+            pushObj.transform.GetComponent<Rigidbody>().linearVelocity = -pushObj.transform.right * speed;
         }
 
         if (pushObj.transform.position.x <= 2f)
         {
-            pushObj.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            pushObj.transform.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         }
     }
 }

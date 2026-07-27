@@ -11,7 +11,7 @@ public class DestroyMoveTrigger : MonoBehaviour
     {
         if (other.name == "item_2")
         {
-            movableObj.transform.GetComponent<Rigidbody>().velocity = movableObj.transform.up * 10f;
+            movableObj.transform.GetComponent<Rigidbody>().linearVelocity = movableObj.transform.up * 10f;
         }
         
     }
@@ -21,7 +21,7 @@ public class DestroyMoveTrigger : MonoBehaviour
     {
         if (other.name == "item_2")
         {
-            movableObj.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            movableObj.transform.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             Destroy(other.gameObject);
         }
         

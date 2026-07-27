@@ -11,7 +11,7 @@ public class StopExplodeTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        other.transform.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 
         Rigidbody[] allRigids = fireworkHolder.GetComponentsInChildren<Rigidbody>();
 

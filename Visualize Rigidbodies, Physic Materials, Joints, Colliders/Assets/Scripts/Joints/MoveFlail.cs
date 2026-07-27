@@ -36,12 +36,12 @@ public class MoveFlail : MonoBehaviour
             if (Vector3.Distance(hitPos, handle.transform.position) > minDist)
             {
                 Vector3 direction = (hitPos - handle.transform.position).normalized;
-                handle.transform.GetComponent<Rigidbody>().velocity = direction * speed;
+                handle.transform.GetComponent<Rigidbody>().linearVelocity = direction * speed;
 
             }
             else
             {
-                handle.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                handle.transform.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             }
             
         }

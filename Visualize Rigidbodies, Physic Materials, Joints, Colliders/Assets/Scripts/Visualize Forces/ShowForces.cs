@@ -51,7 +51,7 @@ public class ShowForces : MonoBehaviour
         }
         else
         {
-            transform.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+            transform.GetComponent<Rigidbody>().linearVelocity = new Vector3(0f, 0f, 0f);
             transform.GetComponent<Rigidbody>().angularVelocity = new Vector3(0f, 0f, 0f);
             transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
             transform.position = startPos;
@@ -65,7 +65,7 @@ public class ShowForces : MonoBehaviour
     {
         if (currOption == PhysicsMovementOptions.velocity)
         {
-            transform.GetComponent<Rigidbody>().velocity = Vector3.right * force;
+            transform.GetComponent<Rigidbody>().linearVelocity = Vector3.right * force;
         }
         else if (currOption == PhysicsMovementOptions.force)
         {

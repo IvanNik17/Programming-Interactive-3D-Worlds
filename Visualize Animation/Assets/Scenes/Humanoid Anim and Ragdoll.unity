@@ -3647,6 +3647,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllColliders: []
+  AllRigidbodies: []
+  mainCollider: {fileID: 0}
+  impactTargetBone: {fileID: 7247751095032769954}
 --- !u!54 &5528666096010928298
 Rigidbody:
   m_ObjectHideFlags: 0
